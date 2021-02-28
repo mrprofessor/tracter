@@ -1,0 +1,21 @@
+* Tracter
+
+Tracter aspires to be the only tool you need to get all the information for a website.
+
+** Initial basic usage
+
+tracter --help
+tracter example.com
+tracter example.com -whois
+tracter example.com -ssl
+
+vs
+
+- tracter who -url example.com
+  Provides the basic whois data
+
+- tracter ssl -url example.com
+  Provides the ssl certs data, such as expiration etc
+
+- tracter find -url example.com
+  Works like a domain search, may provide alternate solutions
