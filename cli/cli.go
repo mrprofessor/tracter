@@ -3,10 +3,11 @@ package cli
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/mrprofessor/tracter/utils"
 )
 
 func Run() {
@@ -68,21 +69,10 @@ func whoIsData(url string) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	fmt.Println(parseResponse(resp))
+	fmt.Println(utils.ParseResponse(resp))
 }
 
 // getSSL looks up and finds the ssl certificate data
 func sslData(url string) {
 	fmt.Println("")
-}
-
-// Utils
-
-// Read the response body and return as string
-func parseResponse(resp *http.Response) string {
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	return string(body)
 }
